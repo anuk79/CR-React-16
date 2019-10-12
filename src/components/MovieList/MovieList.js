@@ -4,25 +4,12 @@ import FormHeader from "../FormHeader/FormHeader";
 import "./MovieList.css";
 
 class MovieList extends Component {
+  constructor(props){
+    super(props);
+    this.data = this.props.location.state
+    console.log('movie-list',this.data.movie);
+  }
   render() {
-    // TODO:: The list shown should be sorted by ratings, in descending order
-    // TODO:: If no data in movieList, show message - 'No movies found to display'
-    const list =
-      this.props.movieList &&
-      this.props.movieList.map(movie => {
-        return (
-          <div className="movie">
-            {/* TODO:: Convert this div into a link (website filled), 
-          on click, the link should open in new tab
-          */}
-            <div>{movie.name}</div>
-            <div>({movie.genre})</div>
-            <div>
-              <span className="fa fa-star" /> {movie.rating}/5
-            </div>
-          </div>
-        );
-      });
     return (
       <div>
         <FormHeader formTitle="Movie list" />
@@ -34,7 +21,13 @@ class MovieList extends Component {
         >
           <i className="fa fa-plus" />
         </button>
-        {list}
+          {this.data?<div className="movie">
+            <div>{this.data.movie.MovieName}</div>
+            <div>({this.data.movie.genre})</div>
+            <div>
+              <span className="fa fa-star" /> {this.data.rating}/5
+            </div>
+          </div>:""}
       </div>
     );
   }

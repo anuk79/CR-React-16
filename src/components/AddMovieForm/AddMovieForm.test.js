@@ -12,7 +12,14 @@ describe("AddMovieForm component", () => {
     // test cases here
   });
   it("should call change handler on change event of Movie Name input control", () => {
-    // test cases here
+    const output = shallow((<AddMovieForm />);
+    const input = output.find("input").at(0);
+    input.simulate('change',{
+      target: {
+        MovieName: "Dhoom"
+      }
+    });
+    expect(output.state().MovieName).toBe("Dhoom");
   });
   it("should call change handler on change event of Website input control", () => {
     // test cases here

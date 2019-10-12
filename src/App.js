@@ -12,6 +12,7 @@ class App extends React.Component {
         <div className="App">
           <Switch>
             <Route exact path="/add-movie" component={AddMovieForm} />
+            <Route exact path="/movie-list" component={MovieList} />
           </Switch>
           <Switch>
             <Route exact path="/" component={MovieList} />
