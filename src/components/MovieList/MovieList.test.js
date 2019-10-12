@@ -12,11 +12,11 @@ describe("MovieList component", () => {
   it("should render correctly when no data received in props", () => {
     const output = shallow(<MovieList />);
     // TODO:: add assertion for this test case here
-
+    expect(output.props()).length.toBe(0);
   });
   it("should render correctly when valid data received in props", () => {
     const output = shallow(<MovieList />);
     // TODO:: add assertion for this test case here
-
+    expect(output.props()).length.toBe(1);
   });
 });

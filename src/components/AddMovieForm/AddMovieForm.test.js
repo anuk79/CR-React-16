@@ -12,7 +12,7 @@ describe("AddMovieForm component", () => {
     // test cases here
   });
   it("should call change handler on change event of Movie Name input control", () => {
-    const output = shallow((<AddMovieForm />);
+    const output = shallow((<AddMovieForm />));
     const input = output.find("input").at(0);
     input.simulate('change',{
       target: {
@@ -22,7 +22,14 @@ describe("AddMovieForm component", () => {
     expect(output.state().MovieName).toBe("Dhoom");
   });
   it("should call change handler on change event of Website input control", () => {
-    // test cases here
+    const output = shallow((<AddMovieForm />));
+    const input = output.find("input#website");
+    input.simulate('change',{
+      target: {
+        Website: "https://abc.com"
+      }
+    });
+    expect(output.state().MovieName).toBe("https://abc.com");
   });
   it("should select correct value on Genre dropdown control option selection", () => {
     // test cases here

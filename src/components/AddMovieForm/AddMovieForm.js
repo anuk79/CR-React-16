@@ -35,7 +35,7 @@ class AddMovieForm extends React.Component {
         <button
           className="add-movie-button"
           onClick={() => {
-
+              window.history.back();
           }}
         >
           <i className="fa fa-long-arrow-left" aria-hidden="true" />
